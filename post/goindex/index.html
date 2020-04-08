@@ -3,7 +3,7 @@
     <meta charset="utf-8"/>
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Sepmoecat的日记本</title>
+<title>搭建一个可获取直链的网盘 | Sepmoecat的日记本</title>
 <link rel="shortcut icon" href="https://sepmoecat.github.io/favicon.ico?v=1586330335188">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://sepmoecat.github.io/styles/main.css">
@@ -34,11 +34,11 @@
 
 
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 </head>
 <body>
 <div class="main gt-bg-theme-color-first">
-    <div class="main-content">
-        <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg">
     <div class="navbar-brand">
         <img class="user-avatar" src="/images/avatar.png" alt="Avatar">
         <div class="site-name gt-c-content-color-first">
@@ -87,134 +87,107 @@
         </div>
     </div>
 </nav>
-
-        <div class="post-list-container">
-    <div class="post-inner">
-        
-            <div class="post gt-bg-theme-color-second">
-                <div class="post-left">
-                    <div>
-                        
-                        <a href="https://sepmoecat.github.io/post/goindex/">
-                            <span class="post-title gt-c-content-color-first">搭建一个可获取直链的网盘</span>
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    搭建一个可获取直链的网盘
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2020-04-08 ·
+                    </time>
+                    
+                        <a href="https://sepmoecat.github.io/tag/SjHc7_yKx/" class="post-tags">
+                            # 网盘
                         </a>
-                    </div>
-                    <div class="gt-post-content post-abstract gt-c-content-color-second">
-                        <p>免费搭建一个<a href="https://static.sepmoe.club/" title="GDrive">Goindex</a>在线文件服务页面.</p>
+                    
+                        <a href="https://sepmoecat.github.io/tag/eMYDo7jutW/" class="post-tags">
+                            # 外链网盘
+                        </a>
+                    
+                        <a href="https://sepmoecat.github.io/tag/LFsVZRXv-j/" class="post-tags">
+                            # Goindex
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <p>免费搭建一个<a href="https://static.sepmoe.club/" title="GDrive">Goindex</a>在线文件服务页面.</p>
 <h2 id="需要准备的东西">需要准备的东西</h2>
 <p>1.一个能使用Google Drive的Google账户(无限容量最好啦)<br>
 2.Cloudflare账户<br>
 3.一双勤劳的手</p>
+<!-- more -->
+<h2 id="重点来了">重点来了</h2>
+<h4 id="goindex有若干个致命的弱点">Goindex有若干个致命的弱点</h4>
+<p>Google Drive 一天仅提供10T的下载流量<br>
+Google API 调用限制<br>
+以及 Workers 每日 100,000 For Free<br>
+这就决定了 Goindex 注定无法为大型网站服务</p>
+<h5 id="但小型网站还是可以hold住的啦">但小型网站还是可以Hold住的啦</h5>
+<h2 id="下面是使用教程">下面是使用教程</h2>
+<h3 id="首先打开">首先打开</h3>
+<p><img src="https://user-images.githubusercontent.com/60971296/78754464-1ad83680-79aa-11ea-9562-1aaed7cba27d.png" alt="installen.gd.workers.dev" title="installen.gd.workers.dev" loading="lazy"><br>
+点击<code>GET AUTH CODE</code>获取 Google 的授权码<br>
+<img src="https://user-images.githubusercontent.com/60971296/78754473-1ca1fa00-79aa-11ea-91b5-143d1f577321.png" alt="" loading="lazy"></p>
+<blockquote>
+<p>如果你无法打开这个网址, 这说明本教程不适宜您的网络使用.建议您办理护照出国来完成本教程.<br>
+<img src="https://user-images.githubusercontent.com/60971296/78754467-1b70cd00-79aa-11ea-9e3f-cd7175623cf5.png" alt="" loading="lazy"></p>
+</blockquote>
+<p>填写至之前的网页中<br>
+然后点击<code>BUILD</code>生成 Cloudflare Workers 代码<br>
+<img src="https://user-images.githubusercontent.com/60971296/78754480-1e6bbd80-79aa-11ea-9285-8ba8b3c666d5.png" alt="" loading="lazy"><br>
+打开<a href="https://dash.cloudflare.com/" title="这个网页">这个网页</a>登录或注册 Cloudflare 账户<br>
+登录好之后<br>
+点击左上角的菜单, 进入 Workers 页面<br>
+<img src="https://user-images.githubusercontent.com/60971296/78754483-1f9cea80-79aa-11ea-921f-cd9e9ddeaf77.png" alt="" loading="lazy"><br>
+根据提示新建 Workers 粘贴您的代码并按个人需求修改发布即可正常使用</p>
+<p>这里是Cloudflare+Goindex的速度测试<br>
+<img src="https://static.sepmoe.club/1.jpg" alt="" loading="lazy"><br>
+以及本站底部的音乐也是托管于Goindex<br>
+你可以尝试下载速度<br>
+<a href="https://static.sepmoe.club/Jay%20Chou/%E6%97%A0%E6%8D%9F/%E4%B8%8D%E7%88%B1%E6%88%91%E5%B0%B1%E6%8B%89%E5%80%92.flac" title="不爱我就拉倒-无损">不爱我就拉倒-无损</a></p>
 
-                    </div>
-                    <div class="post-info">
-                        <time class="post-time gt-c-content-color-first">
-                            发布于 · 2020-04-08 ·
-                        </time>
-                        
-                            <a href="https://sepmoecat.github.io/tag/SjHc7_yKx/" class="post-tag">
-                                # 网盘
-                            </a>
-                        
-                            <a href="https://sepmoecat.github.io/tag/eMYDo7jutW/" class="post-tag">
-                                # 外链网盘
-                            </a>
-                        
-                            <a href="https://sepmoecat.github.io/tag/LFsVZRXv-j/" class="post-tag">
-                                # Goindex
-                            </a>
-                        
-                    </div>
                 </div>
-                
-                    <a href="https://sepmoecat.github.io/post/goindex/" class="post-feature-image"
-                       style="background-image: url('https://user-images.githubusercontent.com/60971296/78755690-2593cb00-79ac-11ea-99e7-ff2c5c3207e9.png')">
-                    </a>
-                
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://sepmoecat.github.io/post/dupan-customize/" class="post-title gt-a-link">
+                    如何自定义百度网盘提取码
+                </a>
             </div>
         
-            <div class="post gt-bg-theme-color-second">
-                <div class="post-left">
-                    <div>
-                        
-                        <a href="https://sepmoecat.github.io/post/dupan-customize/">
-                            <span class="post-title gt-c-content-color-first">如何自定义百度网盘提取码</span>
-                        </a>
-                    </div>
-                    <div class="gt-post-content post-abstract gt-c-content-color-second">
-                        <p>本站百度网盘提取码无特殊标注为 cute</p>
-<h3 id="你需要一个-google-chrome-浏览器-或者任何为-chromium-内核的浏览器"><strong>你需要一个 Google Chrome 浏览器, 或者任何为 Chromium 内核的浏览器</strong></h3>
 
-                    </div>
-                    <div class="post-info">
-                        <time class="post-time gt-c-content-color-first">
-                            发布于 · 2020-03-21 ·
-                        </time>
-                        
-                            <a href="https://sepmoecat.github.io/tag/IVZAlA_wY/" class="post-tag">
-                                # 百度网盘
-                            </a>
-                        
-                            <a href="https://sepmoecat.github.io/tag/G-_5TUhlG8/" class="post-tag">
-                                # 度盘
-                            </a>
-                        
-                            <a href="https://sepmoecat.github.io/tag/Eoto4Pz4R-/" class="post-tag">
-                                # 自定义提取码
-                            </a>
-                        
-                            <a href="https://sepmoecat.github.io/tag/oYV-RAzntz/" class="post-tag">
-                                # 百度网盘自定义密码
-                            </a>
-                        
-                    </div>
-                </div>
-                
-                    <a href="https://sepmoecat.github.io/post/dupan-customize/" class="post-feature-image"
-                       style="background-image: url('https://sepmoecat.github.io/post-images/dupan-customize.png')">
-                    </a>
-                
-            </div>
         
-            <div class="post gt-bg-theme-color-second">
-                <div class="post-left">
-                    <div>
-                        
-                        <a href="https://sepmoecat.github.io/post/hello-gridea/">
-                            <span class="post-title gt-c-content-color-first">Hello Gridea</span>
-                        </a>
-                    </div>
-                    <div class="gt-post-content post-abstract gt-c-content-color-second">
-                        <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+            
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.6.2/gitalk.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.6.2/gitalk.min.js"></script>
 
-                    </div>
-                    <div class="post-info">
-                        <time class="post-time gt-c-content-color-first">
-                            发布于 · 2018-12-12 ·
-                        </time>
-                        
-                            <a href="https://sepmoecat.github.io/tag/uhs5wIAf8/" class="post-tag">
-                                # Gridea
-                            </a>
-                        
-                    </div>
-                </div>
-                
-                    <a href="https://sepmoecat.github.io/post/hello-gridea/" class="post-feature-image"
-                       style="background-image: url('https://sepmoecat.github.io/post-images/hello-gridea.png')">
-                    </a>
-                
-            </div>
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: 'deedf6c6c597fe5d8158',
+    clientSecret: 'b5d14940edf0534b0f9e7bbc754bbbe064166495',
+    repo: 'sepmoecat.github.io',
+    owner: 'sepmoecat',
+    admin: ['sepmoecat'],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+            
+
+            
         
-    </div>
-</div>
-
-        <div class="pagination-container">
-    
-    
-</div>
-
 
         <div class="site-footer gt-c-content-color-first">
     <div class="slogan gt-c-content-color-first">纯真无比的博客</div>
@@ -358,6 +331,7 @@
 <script>
     hljs.initHighlightingOnLoad()
 </script>
+
 
     </div>
 </div>

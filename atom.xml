@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://sepmoecat.github.io</id>
     <title>Sepmoecat的日记本</title>
-    <updated>2020-04-08T02:31:12.681Z</updated>
+    <updated>2020-04-08T07:18:58.277Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://sepmoecat.github.io"/>
     <link rel="self" href="https://sepmoecat.github.io/atom.xml"/>
@@ -10,6 +10,25 @@
     <logo>https://sepmoecat.github.io/images/avatar.png</logo>
     <icon>https://sepmoecat.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Sepmoecat的日记本</rights>
+    <entry>
+        <title type="html"><![CDATA[搭建一个可获取直链的网盘]]></title>
+        <id>https://sepmoecat.github.io/post/goindex/</id>
+        <link href="https://sepmoecat.github.io/post/goindex/">
+        </link>
+        <updated>2020-04-08T07:06:53.000Z</updated>
+        <summary type="html"><![CDATA[<p>免费搭建一个<a href="https://static.sepmoe.club/" title="GDrive">Goindex</a>在线文件服务页面.</p>
+<h2 id="需要准备的东西">需要准备的东西</h2>
+<p>1.一个能使用Google Drive的Google账户(无限容量最好啦)<br>
+2.Cloudflare账户<br>
+3.一双勤劳的手</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>免费搭建一个<a href="https://static.sepmoe.club/" title="GDrive">Goindex</a>在线文件服务页面.</p>
+<h2 id="需要准备的东西">需要准备的东西</h2>
+<p>1.一个能使用Google Drive的Google账户(无限容量最好啦)<br>
+2.Cloudflare账户<br>
+3.一双勤劳的手</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[如何自定义百度网盘提取码]]></title>
         <id>https://sepmoecat.github.io/post/dupan-customize/</id>
