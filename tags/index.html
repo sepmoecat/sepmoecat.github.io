@@ -1,119 +1,148 @@
-<html lang="zh">
+<html>
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sepmoecat的日记本</title>
-<link rel="shortcut icon" href="https://sepmoecat.github.io/favicon.ico">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-<link rel="stylesheet" href="https://sepmoecat.github.io/media/css/tailwind.css">
+<link rel="shortcut icon" href="https://sepmoecat.github.io/favicon.ico?v=1586487556720">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://sepmoecat.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="Sepmoecat的日记本 - Atom Feed" href="https://sepmoecat.github.io/atom.xml">
-  <!-- Love.js -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/dart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/go.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+        <!-- Love.js -->
         <script src="https://cdn.jsdelivr.net/gh/sepmoecat/love.js@v1.0/love.min.js"></script> 
         <!-- APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sepmoecat/APlayer/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/gh/sepmoecat/APlayer/dist/APlayer.min.js"></script>
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
 
-    
 
-  <meta name="description" content="纯真无比的博客" />
+
 </head>
 <body>
-  <div class="antialiased flex flex-col min-h-screen" id="app">
-    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
-  <div class="flex justify-end px-4">
-    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
-      <i class="ri-close-line" v-show="showMenu"></i>
-      <i class="ri-menu-3-line" v-show="!showMenu"></i>
+<div class="main gt-bg-theme-color-first">
+    <div class="main-content">
+        <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="Avatar">
+        <div class="site-name gt-c-content-color-first">
+           <a href="/" >Sepmoecat的日记本</a>
+        </div>
     </div>
-  </div>
-  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
-    
-      <a href="/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        首页
-      </a>
-    
-      <a href="/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        归档
-      </a>
-    
-      <a href="/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        标签
-      </a>
-    
-      <a href="/post/about" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        关于
-      </a>
-    
-    <a href="https://sepmoecat.github.io/atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-      RSS
-    </a>
-  </nav>
-</div>
-    <div class="max-w-4xl w-full mx-auto pt-32">
-      <div class="py-8 shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/post/about" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+    </div>
+</nav>
+
+        <div class="tags-container">
+            
+                <a class="tag gt-c-content-color-first gt-a-link"
+                   href="https://sepmoecat.github.io/tag/SjHc7_yKx/">#网盘</a>
+            
+                <a class="tag gt-c-content-color-first gt-a-link"
+                   href="https://sepmoecat.github.io/tag/eMYDo7jutW/">#外链网盘</a>
+            
+                <a class="tag gt-c-content-color-first gt-a-link"
+                   href="https://sepmoecat.github.io/tag/LFsVZRXv-j/">#Goindex</a>
+            
+                <a class="tag gt-c-content-color-first gt-a-link"
+                   href="https://sepmoecat.github.io/tag/IVZAlA_wY/">#百度网盘</a>
+            
+                <a class="tag gt-c-content-color-first gt-a-link"
+                   href="https://sepmoecat.github.io/tag/G-_5TUhlG8/">#度盘</a>
+            
+                <a class="tag gt-c-content-color-first gt-a-link"
+                   href="https://sepmoecat.github.io/tag/Eoto4Pz4R-/">#自定义提取码</a>
+            
+                <a class="tag gt-c-content-color-first gt-a-link"
+                   href="https://sepmoecat.github.io/tag/oYV-RAzntz/">#百度网盘自定义密码</a>
+            
+                <a class="tag gt-c-content-color-first gt-a-link"
+                   href="https://sepmoecat.github.io/tag/uhs5wIAf8/">#Gridea</a>
+            
+        </div>
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">纯真无比的博客</div>
+    <div class="social-container">
         
-          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
-            <a href="https://sepmoecat.github.io/tag/SjHc7_yKx/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-              <i class="ri-hashtag"></i>
-              网盘（1）
-            </a>
-          </div>
+            
+                <a href="https://github.com/sepmoecat" target="_blank">
+                    <i class="fab fa-github gt-c-content-color-first"></i>
+                </a>
+            
         
-          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
-            <a href="https://sepmoecat.github.io/tag/eMYDo7jutW/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-              <i class="ri-hashtag"></i>
-              外链网盘（1）
-            </a>
-          </div>
+            
         
-          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
-            <a href="https://sepmoecat.github.io/tag/LFsVZRXv-j/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-              <i class="ri-hashtag"></i>
-              Goindex（1）
-            </a>
-          </div>
+            
         
-          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
-            <a href="https://sepmoecat.github.io/tag/IVZAlA_wY/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-              <i class="ri-hashtag"></i>
-              百度网盘（1）
-            </a>
-          </div>
+            
+                <a href="zhihu.com/people/sepmoecat" target="_blank">
+                    <i class="fab fa-zhihu gt-c-content-color-first"></i>
+                </a>
+            
         
-          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
-            <a href="https://sepmoecat.github.io/tag/G-_5TUhlG8/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-              <i class="ri-hashtag"></i>
-              度盘（1）
-            </a>
-          </div>
+            
         
-          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
-            <a href="https://sepmoecat.github.io/tag/Eoto4Pz4R-/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-              <i class="ri-hashtag"></i>
-              自定义提取码（1）
-            </a>
-          </div>
+            
         
-          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
-            <a href="https://sepmoecat.github.io/tag/oYV-RAzntz/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-              <i class="ri-hashtag"></i>
-              百度网盘自定义密码（1）
-            </a>
-          </div>
-        
-          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
-            <a href="https://sepmoecat.github.io/tag/uhs5wIAf8/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-              <i class="ri-hashtag"></i>
-              Gridea（1）
-            </a>
-          </div>
-        
-      </div>
-      <footer class="py-12 text-center px-4 md:px-0" v-pre>
-  <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script><p id="hitokoto">:D 获取中...</p>
+    </div>
+    <div class="footer-info">
+        <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script><p id="hitokoto">:D 获取中...</p>
     </div>
     <div id="aplayer"></div>
     <br>
@@ -226,10 +255,123 @@
     ]
 });
 		</script>
-</footer>
     </div>
-  </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
-  <script src="https://sepmoecat.github.io/media/scripts/main.js"></script>
+    <div id="aplayer"></div>
+    <script>
+    const ap = new APlayer({
+    container: document.getElementById('aplayer'),
+    fixed: false,
+    theme: '#FADFA3',
+    loop: 'none',
+    order: 'random',
+    preload: 'auto',
+    volume: 0.7,
+    listMaxHeight: 120,
+    audio: [
+        {
+            name: '说好的幸福呢＋淘汰＋青花瓷(Live)',
+            artist: '周杰伦',
+            url: 'https://static.sepmoe.club/Jay%20Chou/%E8%AF%B4%E5%A5%BD%E7%9A%84%E5%B9%B8%E7%A6%8F%E5%91%A2%EF%BC%8B%E6%B7%98%E6%B1%B0%EF%BC%8B%E9%9D%92%E8%8A%B1%E7%93%B7.m4a',
+            cover: 'https://user-images.githubusercontent.com/60971296/78099206-b9e1b900-7413-11ea-93cf-4f3c8c472c27.jpg',
+        },
+        {
+            name: '一路向北(Live)',
+            artist: '周杰伦',
+            url: 'https://static.sepmoe.club/Jay%20Chou/%E4%B8%80%E8%B7%AF%E5%90%91%E5%8C%97(Live).m4a',
+            cover: 'https://user-images.githubusercontent.com/60971296/78099182-ad5d6080-7413-11ea-8f38-0b0aa58b375d.jpg',
+        },
+        {
+            name: '说好的幸福呢',
+            artist: '周杰伦',
+            url: 'https://static.sepmoe.club/Jay%20Chou/%E8%AF%B4%E5%A5%BD%E7%9A%84%E5%B9%B8%E7%A6%8F%E5%91%A2.m4a',
+            cover: 'https://user-images.githubusercontent.com/60971296/78099209-bbab7c80-7413-11ea-99d7-64fe27efc74e.jpg',
+        },
+        {
+            name: '不爱我就拉倒',
+            artist: '周杰伦',
+            url: 'https://static.sepmoe.club/Jay%20Chou/%E4%B8%8D%E7%88%B1%E6%88%91%E5%B0%B1%E6%8B%89%E5%80%92.m4a',
+            cover: 'https://user-images.githubusercontent.com/60971296/78099201-b6e6c880-7413-11ea-95b3-33b3df87f04a.jpg',
+        },
+        {
+            name: '不能说的秘密(Live)',
+            artist: '周杰伦',
+            url: 'https://static.sepmoe.club/Jay%20Chou/%E4%B8%8D%E8%83%BD%E8%AF%B4%E7%9A%84%E7%A7%98%E5%AF%86.m4a',
+            cover: 'https://user-images.githubusercontent.com/60971296/78099204-b8b08c00-7413-11ea-868e-036f623a9e51.jpg',
+        },
+        {
+            name: '借口',
+            artist: '周杰伦',
+            url: 'https://static.sepmoe.club/Jay%20Chou/%E5%80%9F%E5%8F%A3.m4a',
+            cover: 'https://user-images.githubusercontent.com/60971296/78099187-b0f0e780-7413-11ea-819d-54ce86fd2dfe.jpg',
+        },
+        {
+            name: '园游会',
+            artist: '周杰伦',
+            url: 'https://static.sepmoe.club/Jay%20Chou/%E5%9B%AD%E6%B8%B8%E4%BC%9A.m4a',
+            cover: 'https://user-images.githubusercontent.com/60971296/78099187-b0f0e780-7413-11ea-819d-54ce86fd2dfe.jpg',
+        },
+        {
+            name: '我不配',
+            artist: '周杰伦',
+            url: 'https://static.sepmoe.club/Jay%20Chou/%E6%88%91%E4%B8%8D%E9%85%8D.m4a',
+            cover: 'https://user-images.githubusercontent.com/60971296/78099190-b3534180-7413-11ea-940a-cc43de0074d8.jpg',
+        },
+        {
+            name: '搁浅',
+            artist: '周杰伦',
+            url: 'https://static.sepmoe.club/Jay%20Chou/%E6%90%81%E6%B5%85.m4a',
+            cover: 'https://user-images.githubusercontent.com/60971296/78099187-b0f0e780-7413-11ea-819d-54ce86fd2dfe.jpg',
+        },
+        {
+            name: '最长的电影(Live)',
+            artist: '周杰伦',
+            url: 'https://static.sepmoe.club/Jay%20Chou/%E6%9C%80%E9%95%BF%E7%9A%84%E7%94%B5%E5%BD%B1.m4a',
+            cover: 'https://user-images.githubusercontent.com/60971296/78099190-b3534180-7413-11ea-940a-cc43de0074d8.jpg',
+        },
+        {
+            name: '爱情悬崖',
+            artist: '周杰伦',
+            url: 'https://static.sepmoe.club/Jay%20Chou/%E7%88%B1%E6%83%85%E6%82%AC%E5%B4%96.m4a',
+            cover: 'https://user-images.githubusercontent.com/60971296/78099193-b4846e80-7413-11ea-9e73-8e8a9d502de0.jpg',
+        },
+        {
+            name: '退后(Live)',
+            artist: '周杰伦',
+            url: 'https://static.sepmoe.club/Jay%20Chou/%E9%80%80%E5%90%8E.m4a',
+            cover: 'https://user-images.githubusercontent.com/60971296/78099200-b64e3200-7413-11ea-8ab6-6628c3b6a2ce.jpg',
+        },
+        {
+            name: '蒲公英的约定(Live)',
+            artist: '周杰伦',
+            url: 'https://static.sepmoe.club/Jay%20Chou/%E8%92%B2%E5%85%AC%E8%8B%B1%E7%9A%84%E7%BA%A6%E5%AE%9A.m4a',
+            cover: 'https://user-images.githubusercontent.com/60971296/78099204-b8b08c00-7413-11ea-868e-036f623a9e51.jpg',
+        },
+        {
+            name: '说了再见',
+            artist: '周杰伦',
+            url: 'https://static.sepmoe.club/Jay%20Chou/%E8%AF%B4%E4%BA%86%E5%86%8D%E8%A7%81.m4a',
+            cover: 'https://user-images.githubusercontent.com/60971296/78099209-bbab7c80-7413-11ea-99d7-64fe27efc74e.jpg',
+        },
+        {
+            name: '阳光宅男(Live)',
+            artist: '周杰伦',
+            url: 'https://static.sepmoe.club/Jay%20Chou/%E9%98%B3%E5%85%89%E5%AE%85%E7%94%B7(Live).m4a',
+            cover: 'https://user-images.githubusercontent.com/60971296/78099206-b9e1b900-7413-11ea-93cf-4f3c8c472c27.jpg',
+        }
+    ]
+});
+		</script>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a href="https://pages.github.com/" target="_blank">Github Pages</a> | <a href="https://sepmoecat.github.io/atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+    hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
 </body>
 </html>
