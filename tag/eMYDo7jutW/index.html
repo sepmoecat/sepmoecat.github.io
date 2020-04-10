@@ -1,178 +1,105 @@
-<html>
+<html lang="zh">
 <head>
-    <meta charset="utf-8"/>
-<meta name="description" content=""/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>外链网盘 | Sepmoecat的日记本</title>
-<link rel="shortcut icon" href="https://sepmoecat.github.io/favicon.ico?v=1586336452009">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Sepmoecat的日记本</title>
+<link rel="shortcut icon" href="https://sepmoecat.github.io/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://sepmoecat.github.io/media/css/tailwind.css">
 <link rel="stylesheet" href="https://sepmoecat.github.io/styles/main.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/dart.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/go.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
-        <!-- Love.js -->
+<link rel="alternate" type="application/atom+xml" title="Sepmoecat的日记本 - Atom Feed" href="https://sepmoecat.github.io/atom.xml">
+  <!-- Love.js -->
         <script src="https://cdn.jsdelivr.net/gh/sepmoecat/love.js@v1.0/love.min.js"></script> 
         <!-- APlayer -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sepmoecat/APlayer/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/gh/sepmoecat/APlayer/dist/APlayer.min.js"></script>
-<!-- DEMO JS -->
-<!--<script src="media/scripts/index.js"></script>-->
 
+    
 
-
+  <meta name="description" content="纯真无比的博客" />
 </head>
 <body>
-<div class="main gt-bg-theme-color-first">
-    <div class="main-content">
-        <nav class="navbar navbar-expand-lg">
-    <div class="navbar-brand">
-        <img class="user-avatar" src="/images/avatar.png" alt="Avatar">
-        <div class="site-name gt-c-content-color-first">
-           <a href="/" >Sepmoecat的日记本</a>
-        </div>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+
+    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
+  <div class="flex justify-end px-4">
+    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
+      <i class="ri-close-line" v-show="showMenu"></i>
+      <i class="ri-menu-3-line" v-show="!showMenu"></i>
     </div>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="navbar-nav mr-auto" style="text-align: center">
-            
-                <div class="nav-item">
-                    
-                        <a href="/" class="menu gt-a-link">
-                            首页
-                        </a>
-                    
-                </div>
-            
-                <div class="nav-item">
-                    
-                        <a href="/archives" class="menu gt-a-link">
-                            归档
-                        </a>
-                    
-                </div>
-            
-                <div class="nav-item">
-                    
-                        <a href="/tags" class="menu gt-a-link">
-                            标签
-                        </a>
-                    
-                </div>
-            
-                <div class="nav-item">
-                    
-                        <a href="/post/about" class="menu gt-a-link">
-                            关于
-                        </a>
-                    
-                </div>
-            
-        </div>
-    </div>
-</nav>
-        <div class="current-tag-container">
-            <h2 class="title gt-c-content-color-first">
-                #外链网盘
-            </h2>
-        </div>
-        <div class="post-list-container">
-    <div class="post-inner">
+  </div>
+  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
+    
+      <a href="/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        首页
+      </a>
+    
+      <a href="/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        归档
+      </a>
+    
+      <a href="/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        标签
+      </a>
+    
+      <a href="/post/about" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        关于
+      </a>
+    
+    <a href="https://sepmoecat.github.io/atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+      RSS
+    </a>
+  </nav>
+</div>
+
+    <div class="max-w-4xl w-full mx-auto pt-32">
+      <h1 class="text-2xl font-bold pb-8 flex justify-center items-center">
+        <i class="ri-hashtag"></i>
+        外链网盘
+      </h1>
+      <div class="shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
         
-            <div class="post gt-bg-theme-color-second">
-                <div class="post-left">
-                    <div>
-                        
-                        <a href="https://sepmoecat.github.io/post/goindex/">
-                            <span class="post-title gt-c-content-color-first">搭建一个可获取直链的网盘</span>
-                        </a>
-                    </div>
-                    <div class="gt-post-content post-abstract gt-c-content-color-second">
-                        <p>免费搭建一个<a href="https://static.sepmoe.club/" title="GDrive">Goindex</a>在线文件服务页面.</p>
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://sepmoecat.github.io/post/goindex/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          搭建一个可获取直链的网盘
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-04-08</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <p>免费搭建一个<a href="https://static.sepmoe.club/" title="GDrive">Goindex</a>在线文件服务页面.</p>
 <h2 id="需要准备的东西">需要准备的东西</h2>
 <p>1.一个能使用Google Drive的Google账户(无限容量最好啦)<br>
 2.Cloudflare账户<br>
 3.一双勤劳的手</p>
 
-                    </div>
-                    <div class="post-info">
-                        <time class="post-time gt-c-content-color-first">
-                            发布于 · 2020-04-08 ·
-                        </time>
-                        
-                            <a href="https://sepmoecat.github.io/tag/SjHc7_yKx/" class="post-tag">
-                                # 网盘
-                            </a>
-                        
-                            <a href="https://sepmoecat.github.io/tag/eMYDo7jutW/" class="post-tag">
-                                # 外链网盘
-                            </a>
-                        
-                            <a href="https://sepmoecat.github.io/tag/LFsVZRXv-j/" class="post-tag">
-                                # Goindex
-                            </a>
-                        
-                    </div>
-                </div>
-                
-                    <a href="https://sepmoecat.github.io/post/goindex/" class="post-feature-image"
-                       style="background-image: url('https://user-images.githubusercontent.com/60971296/78755690-2593cb00-79ac-11ea-99e7-ff2c5c3207e9.png')">
-                    </a>
-                
-            </div>
-        
+      </div>
+      <a href="https://sepmoecat.github.io/post/goindex/" class="btn">
+        Read more...
+      </a>
     </div>
-</div>
-        <div class="pagination-container">
     
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://user-images.githubusercontent.com/60971296/78755690-2593cb00-79ac-11ea-99e7-ff2c5c3207e9.png" alt="搭建一个可获取直链的网盘">
     
-</div>
+  </div>
+  
+      </div>
 
-        <div class="site-footer gt-c-content-color-first">
-    <div class="slogan gt-c-content-color-first">纯真无比的博客</div>
-    <div class="social-container">
-        
-            
-                <a href="https://github.com/sepmoecat" target="_blank">
-                    <i class="fab fa-github gt-c-content-color-first"></i>
-                </a>
-            
-        
-            
-        
-            
-        
-            
-                <a href="zhihu.com/people/sepmoecat" target="_blank">
-                    <i class="fab fa-zhihu gt-c-content-color-first"></i>
-                </a>
-            
-        
-            
-        
-            
-        
-    </div>
-    <div class="footer-info">
-        <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script><p id="hitokoto">:D 获取中...</p>
+      
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script><p id="hitokoto">:D 获取中...</p>
     </div>
     <div id="aplayer"></div>
+    <br>
+    <br>
+    <div>
+<center>Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a href="https://pages.github.com/" target="_blank">Github Pages</a> | <a href="https://sepmoecat.github.io/atom.xml" target="_blank">RSS</a></a></center>
+    </div>
     <script>
     const ap = new APlayer({
     container: document.getElementById('aplayer'),
@@ -277,17 +204,11 @@
     ]
 });
 		</script>
-    <div>
-        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
-                href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a href="https://pages.github.com/" target="_blank">Github Pages</a> | <a href="https://sepmoecat.github.io/atom.xml" target="_blank">RSS</a></a>
-    </div>
-</div>
-
-<script>
-    hljs.initHighlightingOnLoad()
-</script>
+</footer>
 
     </div>
-</div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"<script>
+  <script src="https://sepmoecat.github.io/media/scripts/main.js"></script>
 </body>
 </html>
