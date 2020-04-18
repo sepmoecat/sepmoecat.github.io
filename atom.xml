@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.moescat.xyz</id>
     <title>Sepmoecat的日记本</title>
-    <updated>2020-04-18T01:37:46.865Z</updated>
+    <updated>2020-04-18T12:20:07.663Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.moescat.xyz"/>
     <link rel="self" href="https://www.moescat.xyz/atom.xml"/>
@@ -16,6 +16,16 @@
         <link href="https://www.moescat.xyz/post/wp-image-cdn/">
         </link>
         <updated>2020-04-17T07:00:10.000Z</updated>
+        <summary type="html"><![CDATA[<blockquote>
+<p>你是否还在为图片压缩, 服务器小水管等问题苦恼?<br>
+使用来自 Jetpack 的图片镜像CDN为你的图片加速/压缩</p>
+</blockquote>
+]]></summary>
+        <content type="html"><![CDATA[<blockquote>
+<p>你是否还在为图片压缩, 服务器小水管等问题苦恼?<br>
+使用来自 Jetpack 的图片镜像CDN为你的图片加速/压缩</p>
+</blockquote>
+]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[公共CDN库评测]]></title>
