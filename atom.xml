@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.moescat.xyz</id>
     <title>Sepmoecat的日记本</title>
-    <updated>2020-04-18T13:53:58.044Z</updated>
+    <updated>2020-04-19T07:37:31.856Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.moescat.xyz"/>
     <link rel="self" href="https://www.moescat.xyz/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://www.moescat.xyz/images/avatar.png</logo>
     <icon>https://www.moescat.xyz/favicon.ico</icon>
     <rights>All rights reserved 2020, Sepmoecat的日记本</rights>
+    <entry>
+        <title type="html"><![CDATA[CatPic 喵图 上线啦]]></title>
+        <id>https://www.moescat.xyz/post/catpic/</id>
+        <link href="https://www.moescat.xyz/post/catpic/">
+        </link>
+        <updated>2020-04-19T07:32:32.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[#骚操作#让你的图片用上WordPress的全球CDN]]></title>
         <id>https://www.moescat.xyz/post/wp-image-cdn/</id>
