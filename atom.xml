@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.moescat.xyz</id>
     <title>Sepmoecat的日记本</title>
-    <updated>2020-04-20T05:10:08.787Z</updated>
+    <updated>2020-04-20T13:17:41.585Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.moescat.xyz"/>
     <link rel="self" href="https://www.moescat.xyz/atom.xml"/>
-    <subtitle>纯真无比的博客</subtitle>
+    <subtitle>来自一位高中生的博客, 日常更新奇怪的文章.</subtitle>
     <logo>https://www.moescat.xyz/images/avatar.png</logo>
     <icon>https://www.moescat.xyz/favicon.ico</icon>
     <rights>All rights reserved 2020, Sepmoecat的日记本</rights>
